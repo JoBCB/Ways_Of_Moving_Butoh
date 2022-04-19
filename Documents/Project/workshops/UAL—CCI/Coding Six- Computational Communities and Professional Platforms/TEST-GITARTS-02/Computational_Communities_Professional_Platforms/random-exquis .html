@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Sharing_and_Shaping</title>
+
+  <meta charset="utf-8"/>
+  <meta name="description" content="cadaver exquisite exercise">
+  <meta name="keywords" content="web digital collage Screen hypertext scripts">
+  <meta name="author" content="Joana Chicau">
+
+<!-- adapted from: https://github.com/JoBCB/shape_sharing/blob/master/Shape_Share.html -->
+
+<style type="text/css">
+
+body {
+  font-family: sans-serif;
+  font-size: 62pt;
+  font-weight: bold;
+}  
+
+.split {
+  height: 50%;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+
+.top {
+  top: 0;
+}
+
+
+.bottom {
+  bottom: 0;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+img{
+  max-width: 200px;
+  margin-top: 20%;
+}
+</style>
+</head>
+<body>
+ <div class="split top">
+  <div class="centered">
+  <div id="material_top"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Mickey_Mouse_head_and_ears.png" alt="mickey mouse head in black"></div>
+  </div> 
+  </div>   
+
+  <div class="split bottom">
+  <div class="centered">    
+    <div id="material_bottom"></div>
+  </div> 
+  </div> 
+
+<script type="text/javascript">
+
+var total_material = 7;
+//var random_number = Math.floor((Math.random()*total_material));
+var material_bottomside = new Array();
+material_bottomside[0] = '<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/20080306152140-interrogacion1.png">';
+material_bottomside[1] = '<img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Question_mark_3d.png">';
+material_bottomside[2] = '¿where is my second half?';
+material_bottomside[3] = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Rotating-questionmark.gif">';
+material_bottomside[4] = '<img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Quizz_transparent.png">';
+material_bottomside[5] = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Copyright_1_0.jpg">';
+material_bottomside[6] = '<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Big_help_cursor.png">'
+
+function Random_BottomSide(){
+var random_number= Math.floor(Math.random()*material_bottomside.length);
+document.getElementById('material_bottom').innerHTML=material_bottomside[random_number];
+
+}
+onload = function() { Random_BottomSide(); }
+var inter = setInterval(function() { Random_BottomSide(); }, 800);
+
+</script>
+</body>
+</html>
