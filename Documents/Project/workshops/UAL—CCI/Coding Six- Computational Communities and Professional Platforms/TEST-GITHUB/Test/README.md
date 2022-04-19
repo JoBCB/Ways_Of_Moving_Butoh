@@ -1,3 +1,1 @@
 # Testing
-
-Test sentence.
